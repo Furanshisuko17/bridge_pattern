@@ -43,10 +43,12 @@ fn main() {
         ReporteBasico::new(pdf_sender.clone(), "Mi reporte básico", datos_basico);
 
     reporte_avanzado.enviar_reporte();
+    println!("\n");
     reporte_avanzado_2.enviar_reporte();
 
     println!("\n----------------------------------------------\n");
 
     reporte_basico.enviar_reporte();
+    println!("\n");
     reporte_basico_2.enviar_reporte();
 }
