@@ -16,12 +16,12 @@ impl ExcelSender {
 }
 
 impl Sender for ExcelSender {
-    fn convert(&self) {
+    fn convertir(&self) {
         println!("Reporte convertido a Excel")
     }
 
     fn enviar_reporte(&mut self) {
-        self.convert();
+        self.convertir();
         println!("Reporte Excel enviado a: {}.", self.email);
         self.enviado = true;
     }

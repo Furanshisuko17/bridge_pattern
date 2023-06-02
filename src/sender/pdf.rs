@@ -16,12 +16,12 @@ impl PdfSender {
 }
 
 impl Sender for PdfSender {
-    fn convert(&self) {
+    fn convertir(&self) {
         println!("Reporte convertido a PDF")
     }
 
     fn enviar_reporte(&mut self) {
-        self.convert();
+        self.convertir();
         println!("Reporte PDF enviado a: {}.", self.email);
         self.enviado = true;
     }
