@@ -6,15 +6,6 @@ pub struct PdfSender {
     enviado: bool,
 }
 
-impl Default for PdfSender {
-    fn default() -> Self {
-        Self {
-            email: "example@email.com".to_string(),
-            enviado: false,
-        }
-    }
-}
-
 impl PdfSender {
     pub fn new(email: &str) -> Self {
         Self {

@@ -6,15 +6,6 @@ pub struct ExcelSender {
     enviado: bool,
 }
 
-impl Default for ExcelSender {
-    fn default() -> Self {
-        Self {
-            email: "example@email.com".to_string(),
-            enviado: false,
-        }
-    }
-}
-
 impl ExcelSender {
     pub fn new(email: &str) -> Self {
         Self {

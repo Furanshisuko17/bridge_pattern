@@ -1,6 +1,6 @@
-use crate::sender::{HasMutableSender, Sender};
+use crate::sender::{Sender};
 
-use super::ReportGenerator;
+use super::{ReportGenerator, HasMutableSender};
 
 pub struct ReporteBasico<D: Sender> {
     sender: D,
@@ -42,11 +42,11 @@ impl<D: Sender> ReportGenerator<D> for ReporteBasico<D> {
         if !self.generado {
             self.generar_reporte();
         }
-        self.sender.enviar_reporte();
+        self.sender().enviar_reporte();
     }
 
-    fn is_enviado(&self) {
-        if let Some(email) = self.sender.is_enviado() {
+    fn is_enviado(&mut self) {
+        if let Some(email) = self.sender().is_enviado() {
             println!("Reporte enviado a: {email}");
         } else {
             println!("El reporte no fue enviado aún.")
